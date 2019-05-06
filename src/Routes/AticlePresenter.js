@@ -12,8 +12,9 @@ const Aticle = styled.article`
   grid-auto-rows: 200px;
 `;
 
-export default () => (
+export default ({ id }) => (
   <Aticle>
+    <div>{id}</div>
     <Home />
     <Intro />
     <About />

@@ -1,24 +1,19 @@
-import React, { Component } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
 import GlobalStyles from "./GlobalStyles";
 import Header from "./Header";
-import Aticle from "./Aticle";
+import Route from "./Route";
 import Footer from "./Footer";
 
-export default class App extends Component {
-  render() {
-    return (
+export default () => (
+  <>
+    <GlobalStyles />
+    <BrowserRouter>
       <>
-        <GlobalStyles />
-        <Router>
-          <>
-            <Header />
-            <Route path="/:id" />
-          </>
-        </Router>
-        <Aticle />
-        <Footer />
+        <Header />
+        <Route />
       </>
-    );
-  }
-}
+    </BrowserRouter>
+    <Footer />
+  </>
+);

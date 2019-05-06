@@ -1,17 +1,15 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Switch, Redirect, Route } from "react-router-dom";
+import Aticle from "../Routes/AticleContainer";
 
-const routes = [
-  { path: "home", exact: true },
-  { path: "intro" },
-  { path: "about" },
-  { path: "info" },
-  { path: "facilities" },
-  { path: "contact" }
-];
+const routes = ["/intro", "/about", "/info", "/facilities", "/contact"];
 
 export default () => (
   <Switch>
-    <Route path="/:id" component={}/>
+    <Route path="/" exact={true} component={Aticle} />
+    {routes.map((route, index) => (
+      <Route key={index} path={route} component={Aticle} />
+    ))}
+    <Redirect from="*" to="/" />
   </Switch>
 );
