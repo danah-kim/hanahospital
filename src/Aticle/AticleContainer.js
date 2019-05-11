@@ -59,7 +59,6 @@ export default class extends Component {
     const {
       match: { url }
     } = this.props;
-    let check = false;
     const routes = [
       "/",
       "/home",
@@ -69,6 +68,8 @@ export default class extends Component {
       "/facilities",
       "/contact"
     ];
+    let check = false;
+
     routes.map(route => {
       if (url === route) check = true;
     });
