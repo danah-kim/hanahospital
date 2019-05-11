@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 import AticlePresenter from "./AticlePresenter";
 
 export default class extends Component {
@@ -10,9 +11,7 @@ export default class extends Component {
       info: 0,
       facilities: 0,
       contact: 0
-    },
-    syncingMotion: false,
-    mounted: false
+    }
   };
 
   componentDidMount() {
@@ -57,6 +56,27 @@ export default class extends Component {
   }
 
   render() {
-    return <AticlePresenter />;
+    const {
+      match: { url }
+    } = this.props;
+    let check = false;
+    const routes = [
+      "/",
+      "/home",
+      "/intro",
+      "/about",
+      "/info",
+      "/facilities",
+      "/contact"
+    ];
+    routes.map(route => {
+      if (url === route) check = true;
+    });
+
+    if (check) {
+      return <AticlePresenter />;
+    } else {
+      return <Redirect to="/" />;
+    }
   }
 }
