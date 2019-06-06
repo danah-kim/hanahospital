@@ -7,13 +7,15 @@ const Aticle = styled.article`
   grid-auto-rows: 200px;
 `;
 
-export default () => (
-  <Aticle>
-    <Home />
-    <Intro />
-    <About />
-    <Info />
-    <Facilities />
-    <Contact />
-  </Aticle>
-);
+export default () => {
+  return (
+    <Aticle>
+      <Home />
+      <Intro />
+      <About />
+      <Info />
+      <Facilities />
+      <Contact />
+    </Aticle>
+  );
+};

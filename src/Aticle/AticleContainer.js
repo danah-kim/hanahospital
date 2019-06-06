@@ -1,83 +1,31 @@
-import React, { Component } from "react";
+import React from "react";
 import { Redirect } from "react-router-dom";
 import AticlePresenter from "./AticlePresenter";
+import { scrollToId } from "Hooks";
 
-export default class extends Component {
-  state = {
-    sections: {
-      home: 0,
-      intro: 0,
-      about: 0,
-      info: 0,
-      facilities: 0,
-      contact: 0
-    }
-  };
-
-  componentDidMount() {
-    this.setTop();
+export default ({
+  match: {
+    params: { id },
+    url
   }
-
-  componentDidUpdate(prevProps) {
-    this.scroll();
-  }
-
-  setTop = () => {
-    const { sections } = this.state;
-    let newSections = sections;
-
-    Object.keys(sections).forEach(section => {
-      const element = document.getElementById(section);
-      newSections[section] = element;
-    });
-
-    this.setState({
-      sections: newSections
-    });
-  };
-
-  scroll() {
-    const { sections } = this.state;
-    const {
-      match: {
-        params: { id }
-      }
-    } = this.props;
-
-    /*
-     * can controll restoring scroll positions
-     */
-    if ("scrollRestoration" in window.history) {
-      window.history.scrollRestoration = "manual";
-    }
-
-    const y = id ? sections[id].offsetTop : 0;
-    window.scrollTo(0, y);
-  }
-
-  render() {
-    const {
-      match: { url }
-    } = this.props;
-    const routes = [
-      "/",
-      "/home",
-      "/intro",
-      "/about",
-      "/info",
-      "/facilities",
-      "/contact"
-    ];
+}) => {
+  const checkUrl = url => {
     let check = false;
 
-    routes.map(route => {
-      if (url === route) check = true;
-    });
+    ["/", "/home", "/intro", "/about", "/info", "/facilities", "/contact"].map(
+      route => {
+        if (url === route) check = true;
+        return null;
+      }
+    );
 
-    if (check) {
-      return <AticlePresenter />;
-    } else {
-      return <Redirect to="/" />;
-    }
+    return check;
+  };
+
+  if (checkUrl(url)) {
+    scrollToId(id);
+    return <AticlePresenter id={id} />;
+  } else {
+    return <Redirect to="/" />;
   }
-}
+};

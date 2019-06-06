@@ -2,11 +2,13 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
 import "antd/dist/antd.less";
-import { Layout, Menu } from "antd";
+import { Layout } from "antd";
+
+//const Layout = styled.div``;
 
 const { Header } = Layout;
 
-const HeaderContainer = styled(Header)`
+const HeaderContainer = styled.div`
   left: 0;
   top: 0;
   border: 0;
@@ -33,11 +35,11 @@ const MenuContainer = styled.div`
   width: inherit;
 `;
 
-const Ul = styled(Menu)`
+const Ul = styled.ul`
   height: 100%;
 `;
 
-const Li = styled(Menu.Item)`
+const Li = styled.li`
   height: 100%;
   padding: 0 2.8%;
   height: 49px;
@@ -45,7 +47,6 @@ const Li = styled(Menu.Item)`
   letter-spacing: -0.4px;
   font-size: 18px;
   font-weight: 700;
-  color: #333;
 `;
 
 const StyledLink = styled(Link)``;
@@ -78,14 +79,15 @@ export default withRouter(({ location: { pathname } }) => (
       <MenuContainer>
         <Ul mode="horizontal" style={{ borderBottom: "none" }}>
           {routes.map((route, index) => (
-            <Li
-              key={index}
-              style={{
-                color: props =>
-                  pathname === route.to ? props.theme.mainColor : ""
-              }}
-            >
-              <StyledLink to={route.to}>{route.name}</StyledLink>
+            <Li key={index}>
+              <StyledLink
+                to={route.to}
+                style={{
+                  color: pathname === route.to ? "#F1592A" : "#333"
+                }}
+              >
+                {route.name}
+              </StyledLink>
             </Li>
           ))}
         </Ul>
