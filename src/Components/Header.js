@@ -1,12 +1,12 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
-import "antd/dist/antd.less";
-import { Layout } from "antd";
+//import "antd/dist/antd.less";
+//import { Layout } from "antd";
 
-//const Layout = styled.div``;
+const Layout = styled.div``;
 
-const { Header } = Layout;
+//const { Header } = Layout;
 
 const HeaderContainer = styled.div`
   left: 0;
