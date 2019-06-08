@@ -11,21 +11,16 @@ const Footer = styled.footer`
   font-size: 12px;
   color: #888;
 
-  /* iPads (landscape)  */
-  @media only screen and (max-width: 1317px) and (min-width: 531px) {
+  @media only screen and (min-width: 0px) and (max-width: 530px) {
+    padding: 20px 0 20px 0;
+  }
+  @media only screen and (min-width: 531px) and (max-width: 1317px) {
     padding: 20px 0 23px 0;
   }
 `;
 
 const Div = styled.div`
   *zoom: 1;
-
-  :after {
-    content: "";
-    display: block;
-    clear: both;
-  }
-
   width: 100%;
   max-width: 1300px;
   padding: 0 10px;
@@ -33,8 +28,18 @@ const Div = styled.div`
   box-sizing: border-box;
   font-size: 0;
 
-  /* iPads (landscape)  */
-  @media only screen and (max-width: 1317px) and (min-width: 531px) {
+  :after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  @media only screen and (min-width: 0px) and (max-width: 530px) {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  @media only screen and (min-width: 531px) and (max-width: 1317px) {
     width: 100%;
     max-width: 100%;
     padding: 0 20px;
@@ -47,16 +52,19 @@ const Address = styled.p`
   line-height: 22px;
   font-size: 12px;
   color: #888;
-
-  /* iPads (landscape)  */
-  @media only screen and (max-width: 1317px) and (min-width: 531px) {
+  @media only screen and (min-width: 0px) and (max-width: 530px) {
+    width: 100%;
+    line-height: 25px;
+    font-size: 14px;
+  }
+  @media only screen and (min-width: 531px) and (max-width: 1317px) {
     width: 55%;
     line-height: 24px;
     font-size: 14px;
-  }
 
-  @media screen and (max-width: 812px) {
-    width: 100%;
+    @media screen and (max-width: 812px) {
+      width: 100%;
+    }
   }
 `;
 
@@ -68,8 +76,12 @@ const Line = styled.span`
   vertical-align: middle;
   display: inline-block;
 
-  /* iPads (landscape)  */
-  @media only screen and (max-width: 1317px) and (min-width: 531px) {
+  @media only screen and (min-width: 0px) and (max-width: 530px) {
+    margin: 0 11px;
+    background: #fff;
+    display: inline-block;
+  }
+  @media only screen and (min-width: 531px) and (max-width: 1317px) {
     margin: 0 11px;
   }
 `;
@@ -82,16 +94,22 @@ const Copy = styled.p`
   color: #aaa;
   text-align: right;
 
-  /* iPads (landscape)  */
-  @media only screen and (max-width: 1317px) and (min-width: 531px) {
+  @media only screen and (min-width: 0px) and (max-width: 530px) {
+    text-align: left;
+    float: none;
+    line-height: 25px;
+    font-size: 14px;
+    padding: 8px 0 0 0;
+  }
+  @media only screen and (min-width: 531px) and (max-width: 1317px) {
     float: none;
     line-height: 24px;
     font-size: 14px;
     padding: 8px 0 0 0;
-  }
 
-  @media screen and (max-width: 812px) {
-    text-align: left;
+    @media screen and (max-width: 812px) {
+      text-align: left;
+    }
   }
 `;
 
@@ -111,7 +129,10 @@ export default () => (
         <Line />
         팩스번호: 031-312-8448
       </Address>
-      <Copy>COPYRIGHT © BY Hana ALL RIGHTS RESERVED.</Copy>
+      <Copy>
+        Copyright © {new Date().getFullYear()} HANA ORIENTAL HOSPITAL. All
+        Rights Reserved.
+      </Copy>
     </Div>
   </Footer>
 );

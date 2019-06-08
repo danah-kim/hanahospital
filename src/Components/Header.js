@@ -1,14 +1,14 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
-//import "antd/dist/antd.less";
-//import { Layout } from "antd";
-
-const Layout = styled.div``;
-
-//const { Header } = Layout;
 
 const HeaderContainer = styled.div`
+  position: fixed;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 24px 0;
+  line-height: 49px;
+  height: 100px;
   left: 0;
   top: 0;
   border: 0;
@@ -54,44 +54,35 @@ const StyledLink = styled(Link)``;
 const routes = [
   { to: "/intro", name: "병원소개" },
   { to: "/about", name: "의료진소개" },
-  { to: "/info", name: "진료안내" },
   { to: "/facilities", name: "내부시설" },
-  { to: "/contact", name: "상담문의" }
+  { to: "/departments", name: "진료과목" },
+  { to: "/info", name: "진료안내" }
 ];
 
 export default withRouter(({ location: { pathname } }) => (
-  <Layout>
-    <HeaderContainer
-      style={{
-        position: "fixed",
-        width: "100%",
-        background: "rgba(255,255,255,0.9)",
-        padding: "24px 0",
-        lineHeight: "49px",
-        height: "100px"
-      }}
-    >
-      <LogoContanier>
-        <Link to="/">
-          <Logo src={require("../assets/logo.png")} alt="하나한방병원" />
-        </Link>
-      </LogoContanier>
-      <MenuContainer>
-        <Ul mode="horizontal" style={{ borderBottom: "none" }}>
-          {routes.map((route, index) => (
-            <Li key={index}>
-              <StyledLink
-                to={route.to}
-                style={{
-                  color: pathname === route.to ? "#F1592A" : "#333"
-                }}
-              >
-                {route.name}
-              </StyledLink>
-            </Li>
-          ))}
-        </Ul>
-      </MenuContainer>
-    </HeaderContainer>
-  </Layout>
+  //<Layout>
+  <HeaderContainer>
+    <LogoContanier>
+      <Link to="/">
+        <Logo src={require("../assets/logo.png")} alt="하나한방병원" />
+      </Link>
+    </LogoContanier>
+    <MenuContainer>
+      <Ul mode="horizontal" style={{ borderBottom: "none" }}>
+        {routes.map((route, index) => (
+          <Li key={index}>
+            <StyledLink
+              to={route.to}
+              style={{
+                color: pathname === route.to ? "#F1592A" : "#333"
+              }}
+            >
+              {route.name}
+            </StyledLink>
+          </Li>
+        ))}
+      </Ul>
+    </MenuContainer>
+  </HeaderContainer>
+  //</Layout>
 ));

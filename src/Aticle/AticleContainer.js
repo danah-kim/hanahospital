@@ -12,19 +12,25 @@ export default ({
   const checkUrl = url => {
     let check = false;
 
-    ["/", "/home", "/intro", "/about", "/info", "/facilities", "/contact"].map(
-      route => {
-        if (url === route) check = true;
-        return null;
-      }
-    );
+    [
+      "/",
+      "/home",
+      "/intro",
+      "/about",
+      "/facilities",
+      "/departments",
+      "/info"
+    ].map(route => {
+      if (url === route) check = true;
+      return null;
+    });
 
     return check;
   };
 
   if (checkUrl(url)) {
     scrollToId(id);
-    return <AticlePresenter id={id} />;
+    return <AticlePresenter />;
   } else {
     return <Redirect to="/" />;
   }
