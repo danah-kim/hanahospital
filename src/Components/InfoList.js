@@ -105,6 +105,11 @@ const SubText = styled.span`
 const SubEtc = styled.span`
   color: #f1802a;
   margin-left: 10px;
+
+  @media only screen and (min-width: 0px) and (max-width: 530px) {
+    display: inline-block;
+    padding-left: 50px;
+  }
 `;
 
 const InfoList = ({ title, icon, description1, description2 }) => (

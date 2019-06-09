@@ -131,7 +131,7 @@ const Em = styled.em`
   display: inline-block;
   line-height: 78px;
   font-size: 50px;
-  font-weight: 700;
+  font-weight: 400;
 
   @media only screen and (min-width: 531px) and (max-width: 1317px) {
     width: 100%;
