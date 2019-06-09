@@ -52,6 +52,7 @@ const Address = styled.p`
   line-height: 22px;
   font-size: 12px;
   color: #888;
+
   @media only screen and (min-width: 0px) and (max-width: 530px) {
     width: 100%;
     line-height: 25px;

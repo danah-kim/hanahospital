@@ -64,11 +64,11 @@ export default withRouter(({ location: { pathname } }) => (
   <HeaderContainer>
     <LogoContanier>
       <Link to="/">
-        <Logo src={require("../assets/logo.png")} alt="하나한방병원" />
+        <Logo src={require("../assets/images/logo.png")} alt="하나한방병원" />
       </Link>
     </LogoContanier>
     <MenuContainer>
-      <Ul mode="horizontal" style={{ borderBottom: "none" }}>
+      <Ul>
         {routes.map((route, index) => (
           <Li key={index}>
             <StyledLink

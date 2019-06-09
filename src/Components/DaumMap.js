@@ -67,3 +67,8 @@ class DaumMap extends Component {
 }
 
 export default DaumMap;
+
+/* ToDo
+ - click시 길찾기 새창 띄우기
+ - 이미지 마커 변경
+ */

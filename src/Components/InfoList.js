@@ -24,6 +24,10 @@ const Title = styled.dt`
   color: #fff;
   width: 120px;
   vertical-align: top;
+  line-height: 22px;
+  font-size: 14px;
+  font-weight: 400;
+  display: inline-block;
 
   @media only screen and (min-width: 531px) and (max-width: 1317px) {
     line-height: 22px;
@@ -89,7 +93,7 @@ const SubTitle = styled.span`
 const SubText = styled.span`
   :before {
     display: inline-block;
-    width: 1px;
+    width: 2px;
     height: 15px;
     margin: 4px 9px 0 -11px;
     background-color: #e0e0e0;
@@ -99,7 +103,7 @@ const SubText = styled.span`
 `;
 
 const SubEtc = styled.span`
-  color: #ffa502;
+  color: #f1802a;
   margin-left: 10px;
 `;
 
@@ -108,7 +112,7 @@ const InfoList = ({ title, icon, description1, description2 }) => (
     <Title>
       <Icon>
         <i className={icon} />
-      </Icon>{" "}
+      </Icon>
       {title}
     </Title>
     <Description>
@@ -121,7 +125,7 @@ const InfoList = ({ title, icon, description1, description2 }) => (
           )}
         </Sub>
       ) : (
-        " "
+        ""
       )}
       {description2 ? (
         <P>
@@ -134,7 +138,7 @@ const InfoList = ({ title, icon, description1, description2 }) => (
           ))}
         </P>
       ) : (
-        " "
+        ""
       )}
     </Description>
   </Container>

@@ -201,6 +201,8 @@ const InfoMap = styled.div`
 `;
 
 const MapBox = styled.div`
+  height: 460px;
+  width: 630px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
   font-size: 0;
   position: absolute;
