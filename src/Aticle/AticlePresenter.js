@@ -24,8 +24,11 @@ export default () => {
       <Intro />
       <About />
       <Facilities />
-      <Departments />
       <Info />
     </Aticle>
   );
 };
+
+/*ToDo
+ - <Departments /> 임시막아둠
+ */

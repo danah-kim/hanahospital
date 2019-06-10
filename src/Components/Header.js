@@ -90,7 +90,7 @@ const routes = [
   { to: "/intro", name: "병원소개" },
   { to: "/about", name: "의료진소개" },
   { to: "/facilities", name: "내부시설" },
-  { to: "/departments", name: "진료과목" },
+  //{ to: "/departments", name: "진료과목" },
   { to: "/info", name: "진료안내" }
 ];
 
@@ -118,4 +118,5 @@ export default withRouter(({ location: { pathname } }) => (
 
 /*ToDo
  - mobile menu 작업 필요
+ - 진료과목 임시 막아둠
  */
