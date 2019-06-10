@@ -92,6 +92,11 @@ const Image = styled.div`
   height: 300px;
   background-size: 100% 100%;
 
+  :hover {
+    opacity: 0.7;
+    transition-duration: 0.5s;
+  }
+
   @media only screen and (min-width: 531px) and (max-width: 1317px) {
     height: 300px;
 

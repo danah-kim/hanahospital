@@ -5,6 +5,21 @@ import { Carousel } from "react-bootstrap";
 
 const HomeContainer = styled.div``;
 
+const Text = styled.p`
+  font-size: 60px;
+  font-weight: 100;
+  color: #fff;
+  letter-spacing: -0.06em;
+  margin-bottom: 20px;
+  line-height: 70px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  text-align: left;
+`;
+
+const String = styled.strong`
+  font-weight: 700;
+`;
+
 const Carousels = [
   { image: "carousel01.jpg" },
   { image: "carousel02.jpg" },
@@ -21,8 +36,13 @@ export default () => (
           alt="First slide"
         />
         <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <Text>
+            <String>쾌적한 진료 환경</String>과
+            <br />
+            <String>최신 의료장비 제공</String>으로
+            <br />
+            <String>최상의 진료 서비스</String>를 약속 드립니다.
+          </Text>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -31,10 +51,14 @@ export default () => (
           src={require(`../../assets/images/${Carousels[1].image}`)}
           alt="Third slide"
         />
-
         <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <Text>
+            <String>
+              자동차보험<em>·</em>산재보험<em>·</em>의료보험
+            </String>
+            <br />
+            지정 병원
+          </Text>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -43,36 +67,19 @@ export default () => (
           src={require(`../../assets/images/${Carousels[2].image}`)}
           alt="Third slide"
         />
-
         <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
+          <Text>
+            <String>X-ray 검사</String>부터
+            <String>입원 집중치료</String>까지
+            <br />
+            <String>자동차보험</String>적용
+          </Text>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
   </HomeContainer>
 );
 
-/*  
-  export default () => (
-    <HomeContainer id="home">
-      <Carousel>
-        {Carousels.map((Carousel, index) => (
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src={require(`../../assets/images/${Carousel.image}`)}
-              alt="First slide"
-            />
-            <Carousel.Caption>
-              <h3>First slide label</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-        ))}
-      </Carousel>
-    </HomeContainer>
-  );
-  */
+/*ToDo
+ - 사진 변경 필요
+ */

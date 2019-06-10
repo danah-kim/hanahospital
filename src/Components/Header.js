@@ -14,7 +14,7 @@ const Container = styled.header`
   z-index: 100;
 `;
 
-const LogoContanier = styled.div``;
+const LogoBox = styled.div``;
 
 const Logo = styled(Link)`
   display: block;
@@ -29,7 +29,11 @@ const Logo = styled(Link)`
   z-index: 1;
 `;
 
-const MenuContainer = styled.nav``;
+const NavBox = styled.nav`
+  @media only screen and (min-width: 0px) and (max-width: 750px) {
+    display: none;
+  }
+`;
 
 const Ul = styled.ul`
   display: block;
@@ -67,6 +71,21 @@ const StyledLink = styled(Link)`
   }
 `;
 
+const MenuBox = styled.div`
+  display: none;
+  line-height: 90px;
+  text-align: right;
+  padding-right: 20px;
+  font-size: 1.8em;
+  @media only screen and (min-width: 0px) and (max-width: 750px) {
+    display: block;
+  }
+`;
+
+const MenuBtn = styled.i`
+  color: ${props => props.theme.mainColor};
+`;
+
 const routes = [
   { to: "/intro", name: "병원소개" },
   { to: "/about", name: "의료진소개" },
@@ -77,10 +96,10 @@ const routes = [
 
 export default withRouter(({ location: { pathname } }) => (
   <Container>
-    <LogoContanier>
+    <LogoBox>
       <Logo to="/" bgUrl={require("../assets/images/logo.png")} />
-    </LogoContanier>
-    <MenuContainer>
+    </LogoBox>
+    <NavBox>
       <Ul>
         {routes.map((route, index) => (
           <Li key={index}>
@@ -90,6 +109,13 @@ export default withRouter(({ location: { pathname } }) => (
           </Li>
         ))}
       </Ul>
-    </MenuContainer>
+    </NavBox>
+    <MenuBox>
+      <MenuBtn className="fas fa-bars" />
+    </MenuBox>
   </Container>
 ));
+
+/*ToDo
+ - mobile menu 작업 필요
+ */
