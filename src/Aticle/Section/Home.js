@@ -3,7 +3,11 @@ import styled from "styled-components";
 import "bootstrap/dist/css/bootstrap.css";
 import { Carousel } from "react-bootstrap";
 
-const HomeContainer = styled.div``;
+const HomeContainer = styled.div`
+  @media only screen and (min-width: 0px) and (max-width: 1317px) {
+    display: none;
+  }
+`;
 
 const Text = styled.p`
   font-size: 60px;
@@ -68,6 +72,7 @@ export default () => (
           alt="Third slide"
         />
         <Carousel.Caption>
+          1
           <Text>
             <String>X-ray 검사</String>부터
             <String>입원 집중치료</String>까지
@@ -82,4 +87,5 @@ export default () => (
 
 /*ToDo
  - 사진 변경 필요
+ - rexponisve 대응 적용 필요
  */

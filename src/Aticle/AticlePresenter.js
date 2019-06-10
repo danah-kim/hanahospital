@@ -15,17 +15,6 @@ const Aticle = styled.article`
   overflow: hidden;
   min-width: 320px;
   padding-top: 90px;
-
-  @media only screen and (min-width: 531px) and (max-width: 1317px) {
-    padding-top: 120px;
-
-    @media screen and (max-width: 640px) {
-      padding-top: 105px;
-    }
-  }
-
-  @media only screen and (min-width: 0px) and (max-width: 530px) {
-  }
 `;
 
 export default () => {
