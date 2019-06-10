@@ -13,7 +13,7 @@ export default id => {
       top:
         typeof id === "undefined"
           ? 0
-          : document.getElementById(id).offsetTop - 110,
+          : document.getElementById(id).offsetTop - 90,
       behavior: "smooth"
     });
   });

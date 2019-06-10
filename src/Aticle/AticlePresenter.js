@@ -14,7 +14,7 @@ const Aticle = styled.article`
   overflow-x: hidden;
   overflow: hidden;
   min-width: 320px;
-  padding-top: 100px;
+  padding-top: 90px;
 
   @media only screen and (min-width: 531px) and (max-width: 1317px) {
     padding-top: 120px;

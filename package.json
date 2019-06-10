@@ -11,7 +11,10 @@
     "styled-components": "^4.2.0",
     "styled-reset": "^2.0.10"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "bootstrap": "^4.3.1",
+    "react-bootstrap": "^1.0.0-beta.9"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

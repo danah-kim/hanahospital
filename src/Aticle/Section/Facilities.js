@@ -73,10 +73,10 @@ const Card = styled.div`
   position: relative;
   overflow: hidden;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 
   @media only screen and (min-width: 531px) and (max-width: 1317px) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 
     @media screen and (max-width: 667px) {
       grid-template-columns: 1fr;
@@ -89,11 +89,11 @@ const Card = styled.div`
 
 const Image = styled.div`
   background-image: url(${props => props.bgUrl});
-  height: 400px;
+  height: 300px;
   background-size: 100% 100%;
 
   @media only screen and (min-width: 531px) and (max-width: 1317px) {
-    height: 400px;
+    height: 300px;
 
     @media screen and (max-width: 667px) {
       height: 250px;
@@ -110,9 +110,13 @@ const images = [
   "manual_therapy_room.jpeg",
   "machine.jpg",
   "2f_ward.jpg",
-  "2f_hallway.jpg",
   "3f_ward.jpg",
-  "3f_hallway.jpg"
+  "2f_hallway.jpg",
+  "3f_hallway.jpg",
+  "ward.jpeg",
+  "waitingRoom.jpg",
+  "care_room.jpg",
+  "restroom.jpeg"
 ];
 
 export default () => (
@@ -131,3 +135,7 @@ export default () => (
     </Card>
   </Container>
 );
+
+/*ToDo
+ - 이미지에 효과 주기
+ */
