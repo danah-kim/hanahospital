@@ -72,7 +72,6 @@ export default () => (
           alt="Third slide"
         />
         <Carousel.Caption>
-          1
           <Text>
             <String>X-ray 검사</String>부터
             <String>입원 집중치료</String>까지

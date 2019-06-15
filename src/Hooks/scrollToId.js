@@ -2,6 +2,10 @@ import { useEffect } from "react";
 
 export default id => {
   useEffect(() => {
+    if (!id || typeof id !== "string") {
+      return;
+    }
+
     /*
      * can controll restoring scroll positions
      */

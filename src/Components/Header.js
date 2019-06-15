@@ -20,7 +20,7 @@ const Logo = styled(Link)`
   display: block;
   position: absolute;
   top: 22px;
-  background-image: url(${props => props.bgUrl});
+  background-image: url(${props => props.bgurl});
   background-size: contain;
   background-repeat: no-repeat;
   margin-left: 20px;
@@ -97,13 +97,13 @@ const routes = [
 export default withRouter(({ location: { pathname } }) => (
   <Container>
     <LogoBox>
-      <Logo to="/" bgUrl={require("../assets/images/logo.png")} />
+      <Logo to="/" bgurl={require("../assets/images/logo.png")} />
     </LogoBox>
     <NavBox>
       <Ul>
         {routes.map((route, index) => (
           <Li key={index}>
-            <StyledLink to={route.to} current={pathname === route.to}>
+            <StyledLink to={route.to} current={pathname === route.to ? 1 : 0}>
               {route.name}
             </StyledLink>
           </Li>

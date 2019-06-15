@@ -296,15 +296,14 @@ export default () => (
               <br />
               하나한방병원은 다릅니다.
             </Pstrong>
-            프라이버시를 위한 가림막은 물론 <span class="m_span" />
+            프라이버시를 위한 가림막은 물론 <span className="m_span" />
             <br />
             공간을 더 넓게 하여 불편함 없이 치료를 받으실 수 있습니다. <br />
-            환자분의 상태에 따라 <span class="m_span" />
+            환자분의 상태에 따라 <span className="m_span" />
             <br />
             뜸, 침치료를 포함한 다양한 치료를 받으실 수 있으며,
             <br />
-            환자에게 알맞은 치료를 통해
-            <span class="m_span" />
+            환자에게 알맞은 치료를 통해 <span className="m_span" />
             <br />
             환자의 건강한 내일을 함께 합니다.
           </P>

@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import InfoList from "Components/InfoList";
-import DaumMap from "Components/DaumMap";
 import dotenv from "dotenv";
+import { kakaoMap } from "Hooks";
 
 dotenv.config();
 
@@ -293,11 +293,11 @@ export default () => {
         </InfoText>
         <InfoMap>
           <MapBox>
-            <DaumMap
-              apiKey={process.env.REACT_APP_DAUM_MAP_API_KEY}
-              lng={37.444756}
-              lat={126.799586}
-            />
+            {kakaoMap({
+              apiKey: process.env.REACT_APP_DAUM_MAP_API_KEY,
+              lng: 37.444756,
+              lat: 126.799586
+            })}
           </MapBox>
         </InfoMap>
       </Div>

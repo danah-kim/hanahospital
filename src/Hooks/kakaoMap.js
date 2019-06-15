@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 const Map = styled.div`
@@ -6,17 +6,26 @@ const Map = styled.div`
   height: 100%;
 `;
 
-class DaumMap extends Component {
-  state = { sdkLoaded: false };
+export default data => {
+  if (
+    !data.apiKey ||
+    typeof data.apiKey !== "string" ||
+    !data.lng ||
+    typeof data.lng !== "number" ||
+    !data.lat ||
+    typeof data.lat !== "number"
+  ) {
+    return;
+  }
 
-  loadKakaoSdk = () => {
-    const { apiKey, lng, lat } = this.props;
-
+  useEffect(() => {
     let script = document.createElement("script");
 
     script.id = "kakao-sdk";
     script.type = "text/javascript";
-    script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appKey=${apiKey}&libraries=services,clusterer,drawing&autoload=false`;
+    script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appKey=${
+      data.apiKey
+    }&libraries=services,clusterer,drawing&autoload=false`;
 
     document.head.append(script);
 
@@ -24,12 +33,12 @@ class DaumMap extends Component {
       const daum = window.daum;
       daum.maps.load(function() {
         const map = new daum.maps.Map(document.getElementById("kakao-map"), {
-          center: new daum.maps.LatLng(lng, lat),
+          center: new daum.maps.LatLng(data.lng, data.lat),
           level: 3
         });
 
         const marker = new daum.maps.Marker({
-          position: new daum.maps.LatLng(lng, lat)
+          position: new daum.maps.LatLng(data.lng, data.lat)
         });
 
         marker.setMap(map);
@@ -41,34 +50,15 @@ class DaumMap extends Component {
         map.addControl(zoomControl, daum.maps.ControlPosition.RIGHT);
       });
     };
-  };
 
-  sdkLoaded() {
-    this.setState({ sdkLoaded: true });
-  }
-
-  componentDidMount() {
-    if (document.getElementById("kakaomap-sdk")) {
-      this.sdkLoaded();
-    }
-
-    this.loadKakaoSdk();
     let kakaoMapRoot = document.getElementById("kakao-map");
+
     if (!kakaoMapRoot) {
       kakaoMapRoot = document.createElement("div");
       kakaoMapRoot.id = "kakao-map";
       document.body.appendChild(kakaoMapRoot);
     }
-  }
+  }, [data.apiKey, data.lat, data.lng]);
 
-  render() {
-    return <Map id="kakao-map" />;
-  }
-}
-
-export default DaumMap;
-
-/* ToDo
- - click시 길찾기 새창 띄우기
- - 이미지 마커 변경
- */
+  return <Map id="kakao-map" />;
+};
