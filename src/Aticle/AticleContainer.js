@@ -1,7 +1,7 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
 import AticlePresenter from "./AticlePresenter";
-import { scrollToId } from "Hooks";
+import scrollTo from "@danah/react-hook-scrollto";
 
 export default ({
   match: {
@@ -29,7 +29,7 @@ export default ({
   };
 
   if (checkUrl(url)) {
-    scrollToId(id);
+    scrollTo({ id: id, smooth: true });
     return <AticlePresenter />;
   } else {
     return <Redirect to="/" />;

@@ -1102,6 +1102,16 @@
   resolved "https://registry.yarnpkg.com/@csstools/normalize.css/-/normalize.css-9.0.1.tgz#c27b391d8457d1e893f1eddeaf5e5412d12ffbb5"
   integrity sha512-6It2EVfGskxZCQhuykrfnALg7oVeiI6KclWSmGDqB0AiInVrTGB9Jp9i4/Ad21u9Jde/voVQz6eFX/eSg/UsPA==
 
+"@danah/react-hook-daum-map@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@danah/react-hook-daum-map/-/react-hook-daum-map-1.0.6.tgz#1faa0e639d9019a2b208aa4c837ba77c599e71b7"
+  integrity sha512-GDOhrJalfPQc3ORn/AwRj4FDe5wljNGk85GwT7szNql9jgpxF2bhuMI6dDtnZRXzXkkPFcgudnyuu+a2e7zR8Q==
+
+"@danah/react-hook-scrollto@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@danah/react-hook-scrollto/-/react-hook-scrollto-1.0.6.tgz#20a5a18dcc483ca6439d2c6765038a4675ef0798"
+  integrity sha512-DU6pG6Fk5jQZdIAUhwRivKUz5GWu3vuthHT8XEmp/Isq7qjo/VGI7Fkud49DsbJmQpqcp8KKdKcNJw2hfIXcFg==
+
 "@emotion/is-prop-valid@^0.7.3":
   version "0.7.3"
   resolved "https://registry.yarnpkg.com/@emotion/is-prop-valid/-/is-prop-valid-0.7.3.tgz#a6bf4fa5387cbba59d44e698a4680f481a8da6cc"

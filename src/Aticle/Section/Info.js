@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import InfoList from "Components/InfoList";
 import dotenv from "dotenv";
-import { kakaoMap } from "Hooks";
+import daumMap from "@danah/react-hook-daum-map";
 
 dotenv.config();
 
@@ -221,6 +221,8 @@ const MapBox = styled.div`
   }
 `;
 
+const Map = styled.div``;
+
 const information = [
   {
     title: "문의",
@@ -272,6 +274,12 @@ const information = [
 ];
 
 export default () => {
+  const map = daumMap({
+    apiKey: process.env.REACT_APP_DAUM_MAP_API_KEY,
+    name: "하나한방병원",
+    lng: 37.444756,
+    lat: 126.799586
+  });
   return (
     <Container id="info">
       <Div>
@@ -293,11 +301,7 @@ export default () => {
         </InfoText>
         <InfoMap>
           <MapBox>
-            {kakaoMap({
-              apiKey: process.env.REACT_APP_DAUM_MAP_API_KEY,
-              lng: 37.444756,
-              lat: 126.799586
-            })}
+            <Map {...map} />
           </MapBox>
         </InfoMap>
       </Div>

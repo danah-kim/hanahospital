@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@danah/react-hook-daum-map": "^1.0.6",
+    "@danah/react-hook-scrollto": "^1.0.6",
     "dotenv": "^8.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
