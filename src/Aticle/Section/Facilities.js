@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import Lazyload from "react-lazyload";
+import { CSSTransition } from "react-transition-group";
 
 const Container = styled.div`
   text-align: center;
@@ -133,9 +135,12 @@ export default () => (
         빠른 건강 회복을 위해 최선을 다하고 있습니다.
       </Span>
     </Title>
+
     <Card>
       {images.map((image, index) => (
-        <Image key={index} bgUrl={require(`../../assets/images/${image}`)} />
+        <Lazyload throttle={200}>
+          <Image key={index} bgUrl={require(`../../assets/images/${image}`)} />
+        </Lazyload>
       ))}
     </Card>
   </Container>
