@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Container = styled.dl`
   line-height: 22px;
@@ -116,7 +117,7 @@ const InfoList = ({ title, icon, description1, description2 }) => (
   <Container>
     <Title>
       <Icon>
-        <i className={icon} />
+        <FontAwesomeIcon icon={icon} />
       </Icon>
       {title}
     </Title>

@@ -3,6 +3,11 @@ import styled from "styled-components";
 import InfoList from "Components/InfoList";
 import dotenv from "dotenv";
 import daumMap from "@danah/react-hook-daum-map";
+import {
+  faPhoneAlt,
+  faMapMarkerAlt,
+  faClock
+} from "@fortawesome/free-solid-svg-icons";
 
 dotenv.config();
 
@@ -226,7 +231,7 @@ const Map = styled.div``;
 const information = [
   {
     title: "문의",
-    icon: "fas fa-phone-alt",
+    icon: faPhoneAlt,
     description1: ["031-315-5995"],
     description2: [
       {
@@ -241,7 +246,7 @@ const information = [
   },
   {
     title: "오시는길",
-    icon: "fas fa-map-marker-alt",
+    icon: faMapMarkerAlt,
     description1: [
       "성원아파트 버스정류장 하차",
       "엔제리너스 시흥은행점 건물 3층"
@@ -255,7 +260,7 @@ const information = [
   },
   {
     title: "진료시간",
-    icon: "fas fa-clock",
+    icon: faClock,
     description2: [
       {
         title: "평일",
@@ -283,11 +288,11 @@ export default () => {
   return (
     <Container id="info">
       <Div>
+        <H3>
+          <Span>Medical Information</Span>
+          <Em>하나한방병원 진료안내</Em>
+        </H3>
         <InfoText>
-          <H3>
-            <Span>Medical Information</Span>
-            <Em>하나한방병원 진료안내</Em>
-          </H3>
           {information.map((item, index) => (
             <Info key={index}>
               <InfoList
@@ -310,5 +315,5 @@ export default () => {
 };
 
 /* ToDo
- <InfoList title="이용안내" icon="fas fa-info-circle" />
+ <InfoList title="이용안내" icon=faInfoCircle />
  */

@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import Lazyload from "react-lazyload";
-import { CSSTransition } from "react-transition-group";
 
 const Container = styled.div`
   text-align: center;
@@ -138,8 +137,8 @@ export default () => (
 
     <Card>
       {images.map((image, index) => (
-        <Lazyload throttle={200}>
-          <Image key={index} bgUrl={require(`../../assets/images/${image}`)} />
+        <Lazyload key={index} throttle={200}>
+          <Image bgUrl={require(`../../assets/images/${image}`)} />
         </Lazyload>
       ))}
     </Card>
