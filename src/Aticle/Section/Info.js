@@ -264,7 +264,7 @@ const information = [
     description2: [
       {
         title: "평일",
-        text: "09:00 ~ 18:00",
+        text: "09:30 ~ 19:00",
         etc: "점심시간 12:30 ~ 14:00"
       },
       {
